@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Sign Up</h2>
+        <p class="subtitle">Create your account</p>
+
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <div class="password-box">
+            <input type="password" id="password" placeholder="Password" required>
+            <span class="eye">👁</span>
+        </div>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+
+
+        <button>Sign Up</button>
+
+        <p class="bottom-text">
+            Already have an account?
+            <a href="login.html">login</a>
+        </p>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword }
+            from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBhhi1H4y9V6U5ZMYceKB1Bk0YYoS5Fzco",
+            authDomain: "notes757575.firebaseapp.com",
+            projectId: "notes757575",
+            storageBucket: "notes757575.firebasestorage.app",
+            messagingSenderId: "521967825245",
+            appId: "1:521967825245:web:b4c77570190bfd611878b4"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById("registerBtn").onclick = () => {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    document.getElementById("msg").innerText = "Account created successfully";
+                })
+                .catch(error => {
+                    document.getElementById("msg").innerText = error.message;
+                });
+        };
+
+        const userId = "VRS-USER-" + Math.floor(10000 + Math.random() * 90000);
+        localStorage.setItem("userId", userId);
+
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("userId", storedUserIdFromDB);
+
+
+    </script>
+</body>

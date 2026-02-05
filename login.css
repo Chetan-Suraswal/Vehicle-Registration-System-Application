@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box {
+    background: #ffffff;
+    width: 360px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.login-box h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.password-box {
+    position: relative;
+}
+
+.eye {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 14px;
+    color: #9ca3af;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #6b7280;
+}
+
+.options a {
+    text-decoration: none;
+    color: #3b82f6;
+    margin-left: 195px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4f7df3;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3f6ae0;
+}
+
+.signup {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+.signup a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+
+.low_subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.password-box input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  font-size: 14px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0.5px;
+  height: 44px;
+  line-height: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.password-box input:focus {
+  border-color: #0a3cff;
+}
+
+input[type="password"],
+input[type="text"] {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+}

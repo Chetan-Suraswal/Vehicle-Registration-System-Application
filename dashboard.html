@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vehicle Registration Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <h2 class="logo">VehicleReg</h2>
+
+      <a href="#" data-page="overview">Dashboard</a>
+      <a href="#" data-page="add_vehicle">Add Vehicle</a>
+      <a href="#" data-page="my-vehicles">My Vehicles</a>
+      <a href="#" data-page="profile">Profile</a>
+
+      <button id="logoutBtn">Logout</button>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="main-area">
+
+      <!-- TOP BAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-btn" id="toggleSidebar">☰</button>
+          <span class="app-title">Vehicle Registration System</span>
+        </div>
+      </header>
+
+      <!-- ✅ THIS IS WHERE PAGES LOAD -->
+      <main class="main-content" id="mainContent"></main>
+
+    </div>
+  </div>
+
+  <!-- FIREBASE INIT -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBhhi1H4y9V6U5ZMYceKB1Bk0YYoS5Fzco",
+      authDomain: "notes757575.firebaseapp.com",
+      projectId: "notes757575",
+      storageBucket: "notes757575.firebasestorage.app",
+      messagingSenderId: "521967825245",
+      appId: "1:521967825245:web:b4c77570190bfd611878b4"
+    };
+
+    window.app = initializeApp(firebaseConfig);
+    window.auth = getAuth(app);
+    window.db = getFirestore(app);
+  </script>
+
+  <!-- MAIN DASHBOARD LOGIC -->
+  <script type="module" src="dashboard.js">
+    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const app = initializeApp(firebaseConfig);
+
+    window.app = app;
+    window.auth = getAuth(app);
+    window.db = getFirestore(app);
+
+  </script>
+
+
+</body>
+
+</html>
