@@ -68,14 +68,20 @@ button:hover {
 
 
 .password-box {
-    position: relative;
+  position: relative;
+}
+
+.password-box input {
+  width: 86%;
+  padding-right: 40px;
 }
 
 .eye {
-    position: absolute;
-    right: 12px;
-    top: 12px;
-    font-size: 14px;
-    color: #9ca3af;
-    cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
 }

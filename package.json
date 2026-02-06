@@ -1,11 +1,16 @@
 {
-    "name": "vehicle-registration-system",
-    "version": "1.0.0",
-    "main": "main.js",
-    "scripts": {
-        "start": "electron ."
-    },
-    "devDependencies": {
-        "electron": "^28.0.0"
+  "name": "vehicle-registration-system",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.college.vrs",
+    "productName": "Vehicle Registration System",
+    "win": {
+      "icon": "app-logo.ico"
     }
+  }
 }

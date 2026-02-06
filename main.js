@@ -5,13 +5,15 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1200,
     height: 800,
+    icon: path.join(__dirname, "app-logo.ico"),
     webPreferences: {
-      nodeIntegration: false,
+      preload: path.join(__dirname, "preload.js"),
+      nodeIntegration: true,
       contextIsolation: true
     }
   });
 
-  // 🔑 FIRST PAGE = LOGIN
+  // 🔴 FIRST PAGE = LOGIN
   win.loadFile("login.html");
 }
 
