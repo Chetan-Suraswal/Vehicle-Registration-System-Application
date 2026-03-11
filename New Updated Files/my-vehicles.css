@@ -1,0 +1,99 @@
+.vehicles-wrapper {
+  padding: 24px;
+}
+
+body{
+  background: #d9f2ff;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.vehicle-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vehicle-table thead {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: white;
+}
+
+.vehicle-table th,
+.vehicle-table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.vehicle-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.vehicle-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* STATUS BADGES */
+.status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status.approved {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status.rejected {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ACTION BUTTONS */
+.action-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.btn-view {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-edit {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-download {
+  background: #10b981;
+  color: white;
+}
+
+.btn-admin {
+  background: #ef4444;
+  color: white;
+}
