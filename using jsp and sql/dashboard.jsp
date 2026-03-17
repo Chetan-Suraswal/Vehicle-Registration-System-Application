@@ -125,12 +125,11 @@
     ========================= */
     .topbar {
       height: 64px;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 24px;
+      margin-top: 10px;
     }
 
     .topbar-left {
@@ -139,7 +138,7 @@
     }
 
     .app-title {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
     }
 
@@ -164,27 +163,112 @@
       overflow-y: auto;
     }
 
-    /* Card Base Styles */
+    /* Welcome Section */
+    .welcome-section {
+      margin-bottom: 30px;
+    }
+
+    .welcome-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+
+    .welcome-subtitle {
+      font-size: 15px;
+      color: var(--gray);
+    }
+
+    /* Card Grid */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
+
     .card {
       background: var(--white);
-      padding: 20px;
+      padding: 24px;
       border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
     }
+
     .card h2 {
       font-size: 18px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      color: var(--black);
     }
+
     .card p {
       color: var(--gray);
       font-size: 14px;
+      line-height: 1.5;
       margin-bottom: 16px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .card li {
+      color: var(--gray);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .card-footer {
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 500;
+      margin-top: auto;
+    }
+
+    /* How It Works Section */
+    .how-it-works-section {
+      background: var(--white);
+      padding: 24px;
+      border-radius: 12px;
+      margin-top: 24px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .how-it-works-section h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: var(--black);
+    }
+
+    .flow-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .flow-step {
+      background: var(--white);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .flow-arrow {
+      background: var(--white);
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: var(--gray);
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     }
 
     @media (max-width: 768px) {
@@ -216,12 +300,60 @@
               
               if (pageReq == null || pageReq.equals("overview")) {
           %>
+              <div class="welcome-section">
+                <h1 class="welcome-title">Welcome to Vehicle Registration System</h1>
+                <p class="welcome-subtitle">Manage your profile and vehicles securely from one dashboard.</p>
+              </div>
+
               <div class="card-grid">
                   <div class="card">
-                      <h2>Welcome to VehicleReg</h2>
-                      <p>Select an option from the sidebar to continue.</p>
+                      <h2>Profile</h2>
+                      <p>Your profile stores your personal and contact details. Completing your profile is mandatory before registering any vehicle.</p>
+                      <ul>
+                        <li>User ID & Email</li>
+                        <li>Full Name & Mobile Number</li>
+                        <li>Address Details</li>
+                      </ul>
+                      <div class="card-footer">Step: Sidebar &rarr; Profile &rarr; Fill details &rarr; Save Profile</div>
+                  </div>
+
+                  <div class="card">
+                      <h2>Add Vehicle</h2>
+                      <p>Register a new vehicle by entering owner, vehicle, insurance, and document details.</p>
+                      <ul>
+                        <li>Owner Information</li>
+                        <li>Vehicle Type, Brand & Model</li>
+                        <li>Engine & Chassis Number</li>
+                        <li>Insurance & Document Details</li>
+                      </ul>
+                      <div class="card-footer">Step: Sidebar &rarr; Add Vehicle &rarr; Submit Registration</div>
+                  </div>
+
+                  <div class="card">
+                      <h2>My Vehicles</h2>
+                      <p>View all vehicles registered under your account. Each user can only see their own vehicle records.</p>
+                      <ul>
+                        <li>Registered Vehicle List</li>
+                        <li>Registration Date</li>
+                        <li>Current Status</li>
+                      </ul>
+                      <div class="card-footer">Step: Sidebar &rarr; My Vehicles</div>
                   </div>
               </div>
+
+              <div class="how-it-works-section">
+                <h3>How the System Works</h3>
+                <div class="flow-container">
+                  <div class="flow-step">Login</div>
+                  <div class="flow-arrow">&rarr;</div>
+                  <div class="flow-step">Complete Profile</div>
+                  <div class="flow-arrow">&rarr;</div>
+                  <div class="flow-step">Add Vehicle</div>
+                  <div class="flow-arrow">&rarr;</div>
+                  <div class="flow-step">View My Vehicles</div>
+                </div>
+              </div>
+
           <%
               } else if (pageReq.equals("add_vehicle") || pageReq.equals("my_vehicle") || pageReq.equals("profile")) {
                   // Safely include the requested JSP page
